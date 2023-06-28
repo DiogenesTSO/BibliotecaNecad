@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+	<head>
+		<meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    
+	    <link rel="stylesheet" href="/CadastrarLivros.css">
+	    <link rel="stylesheet" href="/ConsultarLivros.css">
+	    
+	    <title>Biblioteca Necad - Consultar Livros</title>
+	    
+	</head>
+	<body>
+		
+		<form th:action="@{/consultar}" method="get">
+			<div class="form-group">
+		        <label for="consultar">Consultar</label>
+		        <input type="text" name="consulta" id="consulta" class="form-control" required>
+		    </div>
+		    
+		    <div class="form-group">
+		        <label for="tipoConsulta">Filtro</label>
+		        <select name="tipoConsulta" id="tipoConsulta" required>
+		            <option value="" disabled selected>Selecione um filtro</option>
+		            <option value="titulo">Titulo</option>
+		            <option value="autor">Autor</option>
+		            <option value="categoria">Categoria</option>
+		        </select>
+		    </div>
+    
+			    <button type="submit">Consultar</button>
+			    <a href="/Consultar">Exibir Biblioteca</a>
+			   <!-- <a href="/index">Voltar</a> -->
+		</form>
+	
+		<table cellspacing="0">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Categoria</th>
+                <th>Ano</th>
+                <th>Exemplares</th>                
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="livros : ${livros}">
+                <td th:text="${livros.id}"></td>
+                <td th:text="${livros.titulo}"></td>
+                <td th:text="${livros.autor}"></td>
+                <td th:text="${livros.categoria}"></td>
+                <td th:text="${livros.ano}"></td>
+                <td th:text="${livros.exemplares}"></td>                
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
