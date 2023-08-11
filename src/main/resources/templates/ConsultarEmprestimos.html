@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+	<head>
+		<meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    
+	    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	    
+	    <link rel="stylesheet" href="/emprestimo.css">
+	    <link rel="icon" href="/Image/Necad.png">
+	    
+	    <title>Biblioteca Necad - Empréstimos</title>
+	    
+	</head>
+	<body>
+
+        <!--
+        <form th:action="@{/emprestimos/consultarMatricula}" method="get">
+            <input type="text" id="matriculaAluno" name="matriculaAluno" placeholder="Informe a Matricula" required>
+            <select name="filtro" id="filtro">
+                <option value="matricula">Matricula</option>
+            </select>
+            <button class="exit" type="submit">Consultar</button>
+        </form> -->
+
+            <div class="voltar">
+			    <a href="/voltar" class="exit">Voltar</a> 
+            </div>
+
+            <div class="titulo">
+                <label for="titulo">Livros Emprestados:</label>
+            </div>
+
+		<table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Matricula</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Curso</th>
+                <th>Titulo</th>
+                <th>Data</th>
+                <th></th>                
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="emprestar : ${emprestar}" th:id="'emprestimo-' + ${emprestar.id}">
+                <td th:text="${emprestar.id}"></td>
+                <td th:text="${emprestar.matricula}"></td>
+                <td th:text="${emprestar.nome}"></td>
+                <td th:text="${emprestar.email}"></td>
+                <td th:text="${emprestar.curso}"></td>
+                <td>
+                    <span th:each="titulo : ${emprestar.livros}">
+                        <span th:text="${titulo}"></span>
+                        <br>
+                    </span>
+                </td>
+                <td th:text="${emprestar.dataEmprestimo}"></td>
+                <td><button th:onclick="'devolverLivro(' + ${emprestar.id} + ')'">Devolver</button></td>                
+            </tr>
+        </tbody>
+    </table>
+    
+    <script src="js/checkbox.js"></script>
+    
+</body>
+</html>

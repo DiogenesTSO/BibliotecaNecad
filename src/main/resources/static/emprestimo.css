@@ -1,0 +1,79 @@
+html {
+    width: 100%;
+    height: 100%;
+    
+}
+
+body {
+    background-image: url("https://img.freepik.com/vetores-gratis/fundo-branco-com-hexagono-de-tecnologia-azul_1017-19366.jpg?w=1060&t=st=1680738504~exp=1680739104~hmac=7b61cf9f4eea578010d7d77edfad99d20f9571219890aa1f3a01e65fd6583e67");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+    justify-content: center;
+    position: relative;
+    border-radius: 10px;
+    background-color: aliceblue;
+    min-width: 100%;
+    overflow-y: auto;
+} 
+
+table {
+	position: relative;
+	font-size: 13px;
+	font-family: Apple Chancery, cursive;
+	border-collapse: collapse;
+	width: 100%;
+	color: #ddd;
+    padding-bottom: 5px;
+}
+
+th {
+	padding: 5px;
+    background-color: rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
+}
+
+td {
+    text-align: center;
+    padding: 2px;
+    font-weight: bold;
+    font-style: italic; 
+    color: black;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+a {
+    text-decoration: none;
+	display:inline-block;
+    text-align:center;
+    font-family: Apple Chancery, cursive;
+    font-weight: bold;
+    padding: 3px 10px;
+    margin: 5px;
+    font-size: 14px;
+    background-color:#efefef;
+    border-radius:3px;
+    box-shadow:0 1px 2px rgba(0,0,0,.3);
+    cursor:pointer;
+    &:hover {
+      color:white;
+      background:#009bd5;
+    }
+}
+
+.voltar{
+    display: inline;
+    margin-top: 3px;
+    margin-left: 3px;
+    margin-bottom: 3px;
+    }
+
+.titulo {
+    display: inline;
+    font-family: Apple Chancery, cursive;
+    font-weight: bold;
+    font-size: 18px;
+}

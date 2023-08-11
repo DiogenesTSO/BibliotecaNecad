@@ -5,57 +5,79 @@
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	    
-	    <link rel="stylesheet" href="/CadastrarLivros.css">
-	    <link rel="stylesheet" href="/ConsultarLivros.css">
+	    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	   
+		<link rel="stylesheet" href="/ConsultarLivros.css">
+		<link rel="icon" href="/Image/Necad.png">
 	    
 	    <title>Biblioteca Necad - Consultar Livros</title>
 	    
 	</head>
 	<body>
 		
-		<form th:action="@{/consultar}" method="get">
+		<form class="lvr" th:action="@{/consultar}" method="get">
 			<div class="form-group">
-		        <label for="consultar">Consultar</label>
-		        <input type="text" name="consulta" id="consulta" class="form-control" required>
+		        <input type="text" name="consulta" id="consulta" class="form-control" placeholder="Consultar" required>
 		    </div>
 		    
 		    <div class="form-group">
-		        <label for="tipoConsulta">Filtro</label>
 		        <select name="tipoConsulta" id="tipoConsulta" required>
-		            <option value="" disabled selected>Selecione um filtro</option>
+		            <option value="" disabled selected>Filtro</option>
 		            <option value="titulo">Titulo</option>
 		            <option value="autor">Autor</option>
 		            <option value="categoria">Categoria</option>
 		        </select>
 		    </div>
     
-			    <button type="submit">Consultar</button>
-			    <a href="/Consultar">Exibir Biblioteca</a>
-			   <!-- <a href="/index">Voltar</a> -->
+			    <button class="exit" type="submit">Consultar</button>
+			    
 		</form>
-	
-		<table cellspacing="0">
+
+		<a href="/Consultar" class="exit">Exibir Biblioteca</a>
+		<a href="/voltar" class="exit">Voltar</a> 
+		
+		<form>
+			<div class="alun">
+				<input class="mtr" type="text" id="matricula" name="matricula" placeholder="Informe a Matricula" required>
+				<input class="mtr" type="text" id="nomeAluno" name="nomeAluno" readonly required>
+				<input class="mtr" type="date" id="dataEmprestimo" name="dataEmprestimo" required>
+				<button class="exit" type="button" onclick="registrarEmprestimo()">Emprestar</button>
+
+				<p class="mensagem" id="mensagem"></p>
+			</div>
+		</form>
+
+			<p class="cont" id="totalRegistros"> Total de Livros: 0</p>
+			<p class="cont" id="selecionados"> Livros Selecionados: 0</p>
+
+		<table>
         <thead>
             <tr>
+				<th><input type="checkbox" id="selecionarTodos" onchange="selecionarTodos()"></th>
                 <th>ID</th>
                 <th>Título</th>
                 <th>Autor</th>
                 <th>Categoria</th>
                 <th>Ano</th>
-                <th>Exemplares</th>                
+                <th>Exemplares</th>
+				<th>Ações</th>                
             </tr>
         </thead>
         <tbody>
-            <tr th:each="livros : ${livros}">
+            <tr th:each="livros : ${livros}" th:id="'livros-' + ${livros.id}">
+				<td><input type="checkbox" name="livros" id="selecionarLivro" class="selecionarItem" onchange="atualizarContador()"></td>
                 <td th:text="${livros.id}"></td>
-                <td th:text="${livros.titulo}"></td>
+                <td class="titulo-livro" th:text="${livros.titulo}"></td>
                 <td th:text="${livros.autor}"></td>
                 <td th:text="${livros.categoria}"></td>
                 <td th:text="${livros.ano}"></td>
-                <td th:text="${livros.exemplares}"></td>                
+                <td ><span th:text="${livros.exemplares > 0 ? livros.exemplares : 'Indisponível'}"></span></td> 
+				<td><button th:onclick="'deletarLivro(' + ${livros.id} + ')'">Deletar</button></td>               
             </tr>
         </tbody>
     </table>
-
+    
+    <script src="js/checkbox.js"></script>
+	
 </body>
 </html>

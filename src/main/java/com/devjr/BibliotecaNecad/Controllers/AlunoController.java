@@ -22,7 +22,7 @@ public class AlunoController {
 		return "CadastrarAlunos";
 	}
 	
-	@PostMapping("/alunos")
+	@PostMapping("/alunos") 
 		public String cadastrarAlunos(Alunos alunos) {
 			alunosRepository.save(alunos);
 			return "redirect:/CadastrarAlunos";

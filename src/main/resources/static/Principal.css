@@ -59,7 +59,24 @@ li {
     margin: 0 20px;
 }
 
-a {
+footer {
+  bottom: 11%;
+  position: fixed;
+  text-align: center;
+  width: 80%;
+}
+
+.footer p {
+    font-weight: bold;
+    font-family: Apple Chancery, cursive;
+}
+
+.linkFoot {
+    text-decoration: none;
+    color: rgb(255, 1, 1);
+}
+
+.menu {
     text-decoration: none;
     background-color: rgb(250, 0, 0);
     color: white;
@@ -69,6 +86,6 @@ a {
     transition: background-color 0.5s ease;
 }
 
-a:hover {
+.menu:hover {
     box-shadow: 0px 6px 16px -2px rgb(255, 0, 0)
 }

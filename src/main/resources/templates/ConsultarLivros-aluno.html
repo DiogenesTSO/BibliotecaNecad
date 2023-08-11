@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+	<head>
+		<meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    
+	    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	   
+		<link rel="stylesheet" href="/ConsultarLivros.css">
+		<link rel="icon" href="/Image/Necad.png">
+	    
+	    <title>Biblioteca Necad - Consultar Livros</title>
+	    
+	</head>
+	<body>
+		
+		<form class="lvr" th:action="@{/consultarLivroAlun}" method="get">
+			<div class="form-group">
+		        <input type="text" name="consulta" id="consulta" class="form-control" placeholder="Consultar" required>
+		    </div>
+		    
+		    <div class="form-group">
+		        <select name="tipoConsulta" id="tipoConsulta" required>
+		            <option value="" disabled selected>Filtro</option>
+		            <option value="titulo">Titulo</option>
+		            <option value="autor">Autor</option>
+		            <option value="categoria">Categoria</option>
+		        </select>
+		    </div>
+    
+			    <button class="exit" type="submit">Consultar</button>
+			    
+		</form>
+
+		<a href="/Consultar-Aluno" class="exit">Exibir Biblioteca</a>
+		<a href="/voltarAluno" class="exit">Voltar</a> 
+		
+			<p class="cont" id="totalRegistros"> Total de Livros: 0</p>
+			<p class="cont" id="selecionados"> Livros Selecionados: 0</p>
+
+		<table>
+        <thead>
+            <tr>
+				<th><input type="checkbox" id="selecionarTodos" onchange="selecionarTodos()"></th>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Categoria</th>
+                <th>Ano</th>
+                <th>Exemplares</th>
+			<!-- <th>Ações</th> -->	               
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="livros : ${livros}" th:id="'livros-' + ${livros.id}">
+				<td><input type="checkbox" name="livros" id="selecionarLivro" class="selecionarItem" onchange="atualizarContador()"></td>
+                <td th:text="${livros.id}"></td>
+                <td class="titulo-livro" th:text="${livros.titulo}"></td>
+                <td th:text="${livros.autor}"></td>
+                <td th:text="${livros.categoria}"></td>
+                <td th:text="${livros.ano}"></td>
+                <td ><span th:text="${livros.exemplares > 0 ? livros.exemplares : 'Indisponível'}"></span></td> 
+			<!--<td><button th:onclick="'deletarLivro(' + ${livros.id} + ')'">Deletar</button></td> -->	              
+            </tr>
+        </tbody>
+    </table>
+    
+    <script src="js/checkbox.js"></script>
+	
+</body>
+</html>

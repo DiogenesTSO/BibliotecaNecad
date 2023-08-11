@@ -21,7 +21,7 @@ public class CadastrarControllers {
 		model.addAttribute("livros", livros);
 		return "CadastrarLivros";
 	}
-	
+	 
 	@PostMapping("/livros")
 	public String cadastrarlivros(Livros livros) {
 		livrosRepository.save(livros);

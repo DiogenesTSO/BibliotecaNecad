@@ -22,7 +22,7 @@
 				@Column(name = "categoria")
 				private String categoria;
 				@Column(name = "ano")
-				private Integer ano;
+				private Integer ano; 
 				@Column(name = "exemplares")
 				private Integer exemplares;
 

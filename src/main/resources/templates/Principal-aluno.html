@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+	<head>
+		<meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    
+		<link rel="icon" href="/Image/Necad.png">
+	    <link rel="stylesheet" href="/Principal.css">
+	    
+	    <title>Biblioteca Necad - UFSC</title>    
+	    
+	</head>
+	
+	<body>
+		
+		<img src="Image/Necad.png" alt="Necad" style="width: 12%; position:relative; top:2%"> 
+   		<img src="Image/ufsc.png" alt="" style="width: 10%; float:right;">
+		
+		<h1 class="titulo"> Biblioteca Necad - UFSC</h1>
+		<h4 class="titulo2">Sejam bem vindos ao ambiente!</h4>
+
+	    <p class="titulo3">Aqui poderá ser consultado todos os livros disponível no NECAD. <br>
+ 						   Caso haja interesses, podendo solicitar o empréstimo entrando em contato com o NECAD.</p>
+
+		<ul>
+		  <!--  <li><a class="menu" href="/CadastrarLivros">Cadastrar Livros</a></li>
+		   		<li><a class="menu" href="/CadastrarAlunos">Cadastrar Alunos</a></li> -->
+		    <li><a class="menu" href="/Consultar-Aluno">Consultar</a></li>
+		  <!--  <li><a class="menu" href="/Emprestar">Consultar Empréstimos</a></li> -->
+		</ul>
+
+		<form th:action="@{/logout}" method="post">
+			<button type="submit">Logout</button>
+		</form>
+		
+		<div class="footer">
+			<footer>
+				<p class="foot">Biblioteca NECAD - Copyright © 2023, Todos os direitos reservados - Desenvolvido por: <a class="linkFoot" href="https://www.facebook.com/diogenes.odisi/">Diógenes Odisi</a>.</p>
+			</footer>
+		</div>
+
+	</body>
+	
+</html>

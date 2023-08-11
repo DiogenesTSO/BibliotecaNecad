@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
+
 import com.devjr.BibliotecaNecad.Entities.Livros;
 
 public interface LivrosRepository extends JpaRepository<Livros, Long>{
@@ -12,4 +13,5 @@ public interface LivrosRepository extends JpaRepository<Livros, Long>{
 	List<Livros> findByAutorContainingIgnoreCase(String autor);
 	List<Livros> findByCategoriaContainingIgnoreCase(String categoria);
 
+	List<Livros> findByTituloIn(List<String> titulos);
 }

@@ -5,6 +5,7 @@
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	    
+		<link rel="icon" href="/Image/Necad.png">
 	    <link rel="stylesheet" href="/Principal.css">
 	    
 	    <title>Biblioteca Necad - UFSC</title>    
@@ -28,12 +29,22 @@
 	    </p>
 
 		<ul>
-		    <li><a href="/CadastrarLivros">Cadastrar Livros</a></li>
-		    <li><a href="/CadastrarAlunos">Cadastrar Alunos</a></li>
-		    <li><a href="/Consultar">Consultar</a></li>
-		    <li><a href="/Emprestar">Emprestar</a></li>
+		    <li><a class="menu" href="/CadastrarLivros">Cadastrar Livros</a></li>
+		    <li><a class="menu" href="/CadastrarAlunos">Cadastrar Alunos</a></li>
+		    <li><a class="menu" href="/Consultar">Consultar</a></li>
+		    <li><a class="menu" href="/Emprestar">Consultar Empréstimos</a></li>
 		</ul>
+
+		<form th:action="@{/logout}" method="post">
+			<button type="submit">Logout</button>
+		</form>
 		
+		<div class="footer">
+			<footer>
+				<p class="foot">Biblioteca NECAD - Copyright © 2023, Todos os direitos reservados - Desenvolvido por: <a class="linkFoot" href="https://www.facebook.com/diogenes.odisi/">Diógenes Odisi</a>.</p>
+			</footer>
+		</div>
+
 	</body>
 	
 </html>
