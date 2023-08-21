@@ -18,7 +18,7 @@
    		<img src="Image/ufsc.png" alt="" style="width: 10%; float:right;">
 		
 		<h1 class="titulo"> Biblioteca Necad - UFSC</h1>
-		<h4 class="titulo2">Sejam bem vindos ao ambiente!</h4>
+		<h4 class="titulo2">Seja bem vindo(a), <span th:text="${session.nomeAluno}"></span>!</h4>
 
 	    <p class="titulo3">Aqui poderá ser consultado todos os livros disponível no NECAD. <br>
  						   Caso haja interesses, podendo solicitar o empréstimo entrando em contato com o NECAD.</p>
@@ -30,13 +30,13 @@
 		  <!--  <li><a class="menu" href="/Emprestar">Consultar Empréstimos</a></li> -->
 		</ul>
 
-		<form th:action="@{/logout}" method="post">
-			<button type="submit">Logout</button>
+		<form class="form-logout" th:action="@{/logout}" method="post">
+			<button class="logout" type="submit">Sair</button>
 		</form>
 		
 		<div class="footer">
 			<footer>
-				<p class="foot">Biblioteca NECAD - Copyright © 2023, Todos os direitos reservados - Desenvolvido por: <a class="linkFoot" href="https://www.facebook.com/diogenes.odisi/">Diógenes Odisi</a>.</p>
+				<p class="foot">23.2.0 - Biblioteca NECAD - Copyright © 2023, Desenvolvido por: <a class="linkFoot">Diógenes Odisi</a> - Todos os direitos reservados!</p>
 			</footer>
 		</div>
 

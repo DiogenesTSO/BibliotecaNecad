@@ -32,6 +32,7 @@ public class LoginController {
         if (usuario != null && usuario.getPassword().equals(password)) {
             if (usuario.getPapel().contains("ALUNO")){
                 session.setAttribute("usuario", usuario);
+                session.setAttribute("nomeAluno", usuario.getNome());
                 return "Principal-aluno";
             } else if (usuario.getPapel().contains("ADMIN")){
                 session.setAttribute("usuario", usuario);
@@ -47,15 +48,18 @@ public class LoginController {
     @PostMapping("/cadastrar")
     public String cadastrarUsuario(@RequestParam("username") String username,
                                    @RequestParam("password") String password,
+                                   @RequestParam("nome") String nome,
                                    @RequestParam("papel") String papel){
 
-                                    Usuario novoUsuario = new Usuario(username, password);
-
+                                    Usuario novoUsuario = new Usuario();
+                                    novoUsuario.setNome(nome);
+                                    novoUsuario.setUsername(username);
+                                    novoUsuario.setPassword(password);
                                     novoUsuario.setPapel("ALUNO");
 
                                     usuarioRepository.save(novoUsuario);
 
-                                    return "redirect:/login";
+                                    return "Login";
                                    }
 
     

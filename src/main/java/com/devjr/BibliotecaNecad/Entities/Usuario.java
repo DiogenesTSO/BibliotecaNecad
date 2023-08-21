@@ -19,6 +19,8 @@ public class Usuario implements Serializable {
 
     private String username;
     private String password;
+    private String nome;
+
 
     @Column (name = "papel")
     private String papel; //ADMIN ou ALUNO
@@ -62,6 +64,14 @@ public class Usuario implements Serializable {
 
     public void setPapel(String papel) {
         this.papel = papel;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     

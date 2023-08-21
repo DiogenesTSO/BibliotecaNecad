@@ -40,7 +40,7 @@
 			<div class="alun">
 				<input class="mtr" type="text" id="matricula" name="matricula" placeholder="Informe a Matricula" required>
 				<input class="mtr" type="text" id="nomeAluno" name="nomeAluno" readonly required>
-				<input class="mtr" type="date" id="dataEmprestimo" name="dataEmprestimo" required>
+				<input class="mtr" type="date" id="dataEmprestimo" name="dataEmprestimo" required> 
 				<button class="exit" type="button" onclick="registrarEmprestimo()">Emprestar</button>
 
 				<p class="mensagem" id="mensagem"></p>
@@ -71,7 +71,7 @@
                 <td th:text="${livros.autor}"></td>
                 <td th:text="${livros.categoria}"></td>
                 <td th:text="${livros.ano}"></td>
-                <td ><span th:text="${livros.exemplares > 0 ? livros.exemplares : 'Indisponível'}"></span></td> 
+                <td ><span th:text="${livros.exemplares > 0 ? livros.exemplares : 'Todos exemplares emprestados!'}"></span></td> 
 				<td><button th:onclick="'deletarLivro(' + ${livros.id} + ')'">Deletar</button></td>               
             </tr>
         </tbody>

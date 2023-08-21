@@ -17,7 +17,6 @@ import jakarta.persistence.Id;
 			private String matricula;
 			private String nome;
 			private String email;
-			private String cpf;
 			private String curso;
 			
 			
@@ -44,12 +43,6 @@ import jakarta.persistence.Id;
 			}
 			public void setEmail(String email) {
 				this.email = email;
-			}
-			public String getCpf() {
-				return cpf;
-			}
-			public void setCpf(String cpf) {
-				this.cpf = cpf;
 			}
 			public String getCurso() {
 				return curso;

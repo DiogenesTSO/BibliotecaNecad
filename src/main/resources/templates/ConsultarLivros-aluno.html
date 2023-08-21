@@ -60,7 +60,7 @@
                 <td th:text="${livros.autor}"></td>
                 <td th:text="${livros.categoria}"></td>
                 <td th:text="${livros.ano}"></td>
-                <td ><span th:text="${livros.exemplares > 0 ? livros.exemplares : 'Indisponível'}"></span></td> 
+                <td ><span th:text="${livros.exemplares > 0 ? livros.exemplares : 'Todos exemplares emprestados!'}"></span></td> 
 			<!--<td><button th:onclick="'deletarLivro(' + ${livros.id} + ')'">Deletar</button></td> -->	              
             </tr>
         </tbody>

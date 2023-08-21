@@ -1,0 +1,70 @@
+
+body {
+    margin: 0;
+    font-family: Apple Chancery, cursive;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.log, .cad {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgb(0, 0, 0, 0.1);
+    width: 300px;
+    transition: 300ms;
+}
+
+.log {
+    margin-right: 20px;
+}
+
+.tex1, .tex2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.text3 {
+    text-align: center;
+    font-size: 12px;
+}
+
+.tex4 {
+    text-align: center;
+    color: rgb(206, 24, 24);
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    margin-left: 30px;
+    width: 80%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.erro {
+    color: red;
+    text-align: center;
+    font-size: 15px;
+}
+
+select {
+    margin-bottom: 5px;
+}
